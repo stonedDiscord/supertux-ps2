@@ -11,11 +11,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apk add build-base git bash sdl_image sdl_mixer
+          apk add build-base git bash
 
       - name: Compile Supertux
         run: |
-          ./configure
+          make clean
           make
 
       - name: Upload artifacts
