@@ -15,7 +15,7 @@ jobs:
 
       - name: Compile Supertux
         run: |
-          make Makefile.ps2
+          make all
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
