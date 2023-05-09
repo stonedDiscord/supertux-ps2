@@ -15,7 +15,7 @@ jobs:
 
       - name: Compile Supertux
         run: |
-          make DEP_FILES
+          ./configure
           make
 
       - name: Upload artifacts
