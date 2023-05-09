@@ -11,7 +11,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apk add build-base git bash libsdl1.2-dev
+          apk add build-base git bash sdl_image
 
       - name: Compile Supertux
         run: |
