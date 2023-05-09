@@ -1,0 +1,24 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ps2dev/ps2toolchain:latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          apk add build-base git bash
+
+      - name: Compile Supertux
+        run: |
+          make Makefile.ps2
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ps2sdk-supertux
+          path: ~
