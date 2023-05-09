@@ -15,8 +15,7 @@ jobs:
 
       - name: Compile Supertux
         run: |
-          make clean
-          make
+          make all
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
