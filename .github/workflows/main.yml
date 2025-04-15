@@ -22,10 +22,3 @@ jobs:
         with:
           name: ps2sdk-supertux
           path: supertux.elf
-
-      - name: Debug Artifact
-        uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: failure
-          path: /usr/local/ps2dev/ps2sdk/ports/include
