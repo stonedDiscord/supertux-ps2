@@ -13,10 +13,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: 'ps2dev/ps2sdk-ports'
+          path: ports
 
       - name: Build dependencies
         run: |
-          cd ps2sdk-ports
+          cd ports
           make sdlimage
 
       - name: Compile Supertux
