@@ -11,7 +11,7 @@ jobs:
 
       - name: Install build tools
         run: |
-          apk add build-base git bash
+          apk add build-base git bash cmake
 
       - name: Clone dependencies
         uses: actions/checkout@v4
