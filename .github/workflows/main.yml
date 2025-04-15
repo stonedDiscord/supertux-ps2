@@ -15,7 +15,8 @@ jobs:
 
       - name: Compile Supertux
         run: |
-          make supertux
+          make .cpp.o
+          make all
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
