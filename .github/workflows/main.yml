@@ -9,9 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Clone dependencies
+        uses: actions/checkout@v4
+        with:
+          repository: 'ps2dev/ps2sdk-ports'
+
+      - name: Build dependencies
         run: |
-          apk add build-base git bash
+          cd ps2sdk-ports
+          make sdlimage
 
       - name: Compile Supertux
         run: |
