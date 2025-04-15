@@ -28,4 +28,4 @@ jobs:
         if: failure()
         with:
           name: failure
-          path: ./
+          path: /usr/local/ps2dev/ps2sdk/ports/include
