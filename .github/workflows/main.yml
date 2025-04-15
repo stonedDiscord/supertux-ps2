@@ -5,24 +5,13 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ps2dev/ps2sdk:latest
+    container: ps2dev/ps2sdk-ports:latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Install build tools
         run: |
           apk add build-base git bash cmake
-
-      - name: Clone dependencies
-        uses: actions/checkout@v4
-        with:
-          repository: 'ps2dev/ps2sdk-ports'
-          path: ports
-
-      - name: Build dependencies
-        run: |
-          cd ports
-          make sdlimage
 
       - name: Compile Supertux
         run: |
